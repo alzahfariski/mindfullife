@@ -36,3 +36,22 @@ const String md3 = "assets/images/mood/md3.png";
 const String md4 = "assets/images/mood/md4.png";
 const String md5 = "assets/images/mood/md5.png";
 const String md6 = "assets/images/mood/md6.png";
+
+// komunitas
+const String kom1 = 'assets/images/kom1.png';
+
+// meditasi
+const String meditasi1 = 'assets/images/meditasi1.png';
+const String meditasi2 = 'assets/images/meditasi2.png';
+const String meditasi3 = 'assets/images/meditasi3.png';
+const String meditasi4 = 'assets/images/meditasi4.png';
+const String relaksasi = 'assets/images/relaksasi.png';
+
+// mendali
+const String lock = 'assets/logo/locked.png';
+const String medal1 = 'assets/logo/medal1.png';
+
+//misi
+const String beraktifitas = 'assets/images/beraktifitas.png';
+const String membaca = 'assets/images/membaca.png';
+const String menonton = 'assets/images/menonton.png';

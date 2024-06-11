@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:midfullife/app/modules/auth/controllers/dass_stress_controller.dart';
+import 'package:midfullife/app/modules/cemas/page/cemas_page.dart';
+import 'package:midfullife/app/modules/depresi/page/depresi_page.dart';
+import 'package:midfullife/app/modules/misi/page/misi_page.dart';
 import 'package:midfullife/utils/constants/colors.dart';
 import 'package:midfullife/utils/constants/image_string.dart';
 import 'package:ming_cute_icons/ming_cute_icons.dart';
@@ -9,6 +14,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final DassStressController dassStressController =
+        Get.put(DassStressController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -86,7 +93,8 @@ class HomePage extends StatelessWidget {
                       backgroundColor: TColors.primary500,
                       animationDuration: 200,
                       center: Text(
-                        'Normal',
+                        dassStressController.stressStatus.value,
+                        textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme
                             .bodyLarge!
@@ -96,7 +104,8 @@ class HomePage extends StatelessWidget {
                       curve: Curves.bounceInOut,
                       circularStrokeCap: CircularStrokeCap.round,
                       lineWidth: 4,
-                      percent: 0.2,
+                      percent: dassStressController.precent.value,
+                      progressColor: dassStressController.colorStattus.value,
                       radius: 40,
                     ),
                   ),
@@ -105,108 +114,114 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 12,
-                      spreadRadius: 0,
-                      color: Colors.black.withOpacity(0.08),
-                      offset: const Offset(1, 2),
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(10),
-                  color: TColors.grey50,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Skala Depresi',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge!
-                                .copyWith(fontWeight: FontWeight.w600),
-                          ),
-                          Text(
-                            'Yuk cek Kondisi Depresi Kamu',
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                        ],
-                      ),
-                      Container(
-                        width: 40,
-                        height: 40,
-                        decoration: const BoxDecoration(
-                          color: TColors.primary800,
-                          shape: BoxShape.circle,
-                        ),
-                        child: const Icon(
-                          MingCuteIcons.mgc_right_line,
-                          color: TColors.grey50,
-                        ),
-                      ),
+              GestureDetector(
+                onTap: () => Get.to(() => const DepresiPage()),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 12,
+                        spreadRadius: 0,
+                        color: Colors.black.withOpacity(0.08),
+                        offset: const Offset(1, 2),
+                      )
                     ],
+                    borderRadius: BorderRadius.circular(10),
+                    color: TColors.grey50,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Skala Depresi',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge!
+                                  .copyWith(fontWeight: FontWeight.w600),
+                            ),
+                            Text(
+                              'Yuk cek Kondisi Depresi Kamu',
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                          ],
+                        ),
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: const BoxDecoration(
+                            color: TColors.primary800,
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Icon(
+                            MingCuteIcons.mgc_right_line,
+                            color: TColors.grey50,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
-              Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 12,
-                      spreadRadius: 0,
-                      color: Colors.black.withOpacity(0.08),
-                      offset: const Offset(1, 2),
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(10),
-                  color: TColors.grey50,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Skala Kecemasan',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge!
-                                .copyWith(fontWeight: FontWeight.w600),
-                          ),
-                          Text(
-                            'Yuk cek Kondisi Kecemasan Kamu',
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                        ],
-                      ),
-                      Container(
-                        width: 40,
-                        height: 40,
-                        decoration: const BoxDecoration(
-                          color: TColors.primary800,
-                          shape: BoxShape.circle,
-                        ),
-                        child: const Icon(
-                          MingCuteIcons.mgc_right_line,
-                          color: TColors.grey50,
-                        ),
-                      ),
+              GestureDetector(
+                onTap: () => Get.to(() => const CemasPage()),
+                child: Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 12,
+                        spreadRadius: 0,
+                        color: Colors.black.withOpacity(0.08),
+                        offset: const Offset(1, 2),
+                      )
                     ],
+                    borderRadius: BorderRadius.circular(10),
+                    color: TColors.grey50,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Skala Kecemasan',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge!
+                                  .copyWith(fontWeight: FontWeight.w600),
+                            ),
+                            Text(
+                              'Yuk cek Kondisi Kecemasan Kamu',
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                          ],
+                        ),
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: const BoxDecoration(
+                            color: TColors.primary800,
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Icon(
+                            MingCuteIcons.mgc_right_line,
+                            color: TColors.grey50,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -244,7 +259,7 @@ class HomePage extends StatelessWidget {
                         color: TColors.primary400,
                       ),
                       Text(
-                        'Kamu selalu nampak tenang dan damai, salut',
+                        dassStressController.saran[0],
                         style: Theme.of(context)
                             .textTheme
                             .titleLarge!
@@ -254,7 +269,7 @@ class HomePage extends StatelessWidget {
                         color: TColors.primary400,
                       ),
                       Text(
-                        'Teruslah berkaya dan menginspirasi orang lain!',
+                        dassStressController.saran[1],
                         style: Theme.of(context)
                             .textTheme
                             .titleLarge!
@@ -267,74 +282,77 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 12,
-                      spreadRadius: 0,
-                      color: Colors.black.withOpacity(0.08),
-                      offset: const Offset(1, 2),
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(10),
-                  color: TColors.primary500,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Tingkatkan Kondisi',
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ),
-                        Text(
-                          'Selesaikan Misi',
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineMedium!
-                              .copyWith(
-                                fontWeight: FontWeight.w600,
+              GestureDetector(
+                onTap: () => Get.to(() => const MisiPage()),
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 12,
+                        spreadRadius: 0,
+                        color: Colors.black.withOpacity(0.08),
+                        offset: const Offset(1, 2),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(10),
+                    color: TColors.primary500,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Tingkatkan Kondisi',
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
+                          Text(
+                            'Selesaikan Misi',
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineMedium!
+                                .copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                          ),
+                          const SizedBox(
+                            width: 4,
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                width: 20,
+                                height: 20,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: TColors.primary800,
+                                ),
+                                child: const Icon(
+                                  MingCuteIcons.mgc_play_line,
+                                  color: TColors.grey50,
+                                  size: 12,
+                                ),
                               ),
-                        ),
-                        const SizedBox(
-                          width: 4,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              width: 20,
-                              height: 20,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: TColors.primary800,
+                              const SizedBox(
+                                width: 6,
                               ),
-                              child: const Icon(
-                                MingCuteIcons.mgc_play_line,
-                                color: TColors.grey50,
-                                size: 12,
+                              Text(
+                                'Tingkatkan Kondisi',
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
-                            ),
-                            const SizedBox(
-                              width: 6,
-                            ),
-                            Text(
-                              'Tingkatkan Kondisi',
-                              style: Theme.of(context).textTheme.bodyMedium,
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                    Image.asset(
-                      tHome1,
-                      width: 80,
-                    ),
-                  ],
+                            ],
+                          )
+                        ],
+                      ),
+                      Image.asset(
+                        tHome1,
+                        width: 80,
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(

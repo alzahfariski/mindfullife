@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:midfullife/app/modules/auth/controllers/dass_stress_controller.dart';
 import 'package:midfullife/app/modules/main/page/main_page.dart';
 import 'package:midfullife/utils/common/header_container.dart';
 import 'package:midfullife/utils/constants/colors.dart';
@@ -12,6 +13,8 @@ class ResultCekKondisiPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final DassStressController dassStressController =
+        Get.put(DassStressController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -45,9 +48,10 @@ class ResultCekKondisiPage extends StatelessWidget {
                       child: CircularPercentIndicator(
                         animation: true,
                         backgroundColor: TColors.primary500,
-                        animationDuration: 200,
+                        animationDuration: 600,
                         center: Text(
-                          'Normal',
+                          dassStressController.stressStatus.value,
+                          textAlign: TextAlign.center,
                           style: Theme.of(context)
                               .textTheme
                               .bodyLarge!
@@ -57,7 +61,8 @@ class ResultCekKondisiPage extends StatelessWidget {
                         curve: Curves.bounceInOut,
                         circularStrokeCap: CircularStrokeCap.round,
                         lineWidth: 8,
-                        percent: 0.2,
+                        percent: dassStressController.precent.value,
+                        progressColor: dassStressController.colorStattus.value,
                         radius: 60,
                       ),
                     ),
@@ -87,9 +92,9 @@ class ResultCekKondisiPage extends StatelessWidget {
                           ),
                           LinearPercentIndicator(
                             lineHeight: 10.0,
-                            percent: 0.2,
+                            percent: dassStressController.precent.value,
                             trailing: Text(
-                              '20%',
+                              '${dassStressController.precent.value * 100} %',
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyMedium!
@@ -112,7 +117,7 @@ class ResultCekKondisiPage extends StatelessWidget {
                         SizedBox(
                           width: 140,
                           child: Text(
-                            '"Kamu selalu tampak tenang dan damai, salut!" ',
+                            dassStressController.saran[0],
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyLarge!
@@ -130,7 +135,7 @@ class ResultCekKondisiPage extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Teruslah berkarya dan menginspirasi orang lain!',
+                    dassStressController.saran[1],
                     style: Theme.of(context)
                         .textTheme
                         .headlineMedium!
@@ -161,7 +166,7 @@ class ResultCekKondisiPage extends StatelessWidget {
         width: double.infinity,
         child: ElevatedButton(
           onPressed: () {
-            Get.offAll(() => const MainPage());
+            Get.to(() => const MainPage());
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: TColors.primary800,

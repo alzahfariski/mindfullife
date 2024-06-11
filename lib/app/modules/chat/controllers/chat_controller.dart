@@ -13,7 +13,7 @@ class ChatController extends GetxController {
     await Future.delayed(
       const Duration(milliseconds: 1000),
     );
-    Get.offAll(() => const ChatLumiPage());
+    Get.to(() => const ChatLumiPage());
   }
 
   
