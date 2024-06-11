@@ -148,7 +148,7 @@ class LoginPage extends StatelessWidget {
                 backgroundColor: TColors.primary800,
               ),
               child: Text(
-                'Masukk',
+                'Masuk',
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       color: TColors.grey50,
                       fontWeight: FontWeight.w600,
