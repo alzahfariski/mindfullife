@@ -32,7 +32,15 @@ class KomunitasPage extends StatelessWidget {
                       ),
                 ),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.snackbar(
+                      'Maaf!',
+                      'Sedang Proses Pengembangan',
+                      snackPosition: SnackPosition.BOTTOM,
+                      backgroundColor: TColors.primary500,
+                      margin: const EdgeInsets.all(20),
+                    );
+                  },
                   icon: const Icon(
                     MingCuteIcons.mgc_search_2_line,
                     size: 26,
@@ -143,66 +151,90 @@ class KomunitasPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Komunitas Anda',
-                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        fontWeight: FontWeight.w600,
-                      ),
-                ),
-                const Icon(
-                  MingCuteIcons.mgc_right_line,
-                  color: TColors.primary800,
-                ),
-              ],
+            GestureDetector(
+              onTap: () {
+                Get.snackbar(
+                  'Maaf!',
+                  'Sedang Proses Pengembangan',
+                  snackPosition: SnackPosition.BOTTOM,
+                  backgroundColor: TColors.primary500,
+                  margin: const EdgeInsets.all(20),
+                );
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Komunitas Anda',
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
+                  ),
+                  const Icon(
+                    MingCuteIcons.mgc_right_line,
+                    color: TColors.primary800,
+                  ),
+                ],
+              ),
             ),
             const SizedBox(
               height: 20,
             ),
-            Row(
-              children: [
-                Container(
-                  width: 60,
-                  height: 60,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: AssetImage(kom1),
-                      fit: BoxFit.cover,
+            GestureDetector(
+              onTap: () {
+                Get.snackbar(
+                  'Maaf!',
+                  'Sedang Proses Pengembangan',
+                  snackPosition: SnackPosition.BOTTOM,
+                  backgroundColor: TColors.primary500,
+                  margin: const EdgeInsets.all(20),
+                );
+              },
+              child: Row(
+                children: [
+                  Container(
+                    width: 60,
+                    height: 60,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: AssetImage(kom1),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Sini Cerita',
-                      style:
-                          Theme.of(context).textTheme.headlineSmall!.copyWith(
-                                fontWeight: FontWeight.w600,
-                              ),
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          'Bagus : ',
-                          style:
-                              Theme.of(context).textTheme.bodyMedium!.copyWith(
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                        ),
-                        Text('Bawa santay aja cuy',
-                            style: Theme.of(context).textTheme.bodyMedium),
-                      ],
-                    ),
-                  ],
-                )
-              ],
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Sini Cerita',
+                        style:
+                            Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Bagus : ',
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                  fontWeight: FontWeight.w600,
+                                ),
+                          ),
+                          Text('Bawa santay aja cuy',
+                              style: Theme.of(context).textTheme.bodyMedium),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
             const SizedBox(
               height: 10,

@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:midfullife/app/modules/mood/page/mood_history_page.dart';
 import 'package:midfullife/utils/constants/colors.dart';
 import 'package:midfullife/utils/constants/image_string.dart';
 import 'package:ming_cute_icons/ming_cute_icons.dart';
@@ -165,7 +167,9 @@ class _MoodPageState extends State<MoodPage> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(() => const MoodHistoryPage());
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: TColors.primary800,
                         ),
@@ -182,139 +186,145 @@ class _MoodPageState extends State<MoodPage> {
                     const SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      width: double.infinity,
-                      padding: const EdgeInsets.all(14),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: TColors.grey50,
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 8,
-                            spreadRadius: 0,
-                            offset: const Offset(1, 2),
-                            color: Colors.black.withOpacity(0.12),
-                          ),
-                        ],
-                      ),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Jurnal Mood',
-                                style: Theme.of(context).textTheme.titleMedium,
-                              ),
-                              const Icon(
-                                MingCuteIcons.mgc_right_line,
-                                color: TColors.primary800,
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                children: [
-                                  Image.asset(md5, width: 20, height: 20),
-                                  Container(
-                                    width: 2,
-                                    height: 20,
-                                    color: TColors.secondary500,
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Image.asset(md5, width: 20, height: 20),
-                                  Container(
-                                    width: 2,
-                                    height: 20,
-                                    color: TColors.secondary500,
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Image.asset(md4, width: 20, height: 20),
-                                  Container(
-                                    width: 2,
-                                    height: 20,
-                                    color: TColors.secondary500,
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Image.asset(md6, width: 20, height: 20),
-                                  Container(
-                                    width: 2,
-                                    height: 20,
-                                    color: TColors.secondary500,
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Image.asset(md2, width: 20, height: 20),
-                                  Container(
-                                    width: 2,
-                                    height: 20,
-                                    color: TColors.secondary500,
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Image.asset(md5, width: 20, height: 20),
-                                  Container(
-                                    width: 2,
-                                    height: 20,
-                                    color: TColors.secondary500,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          const Divider(),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'sen',
-                                style: Theme.of(context).textTheme.bodyMedium,
-                              ),
-                              Text(
-                                'sel',
-                                style: Theme.of(context).textTheme.bodyMedium,
-                              ),
-                              Text(
-                                'rab',
-                                style: Theme.of(context).textTheme.bodyMedium,
-                              ),
-                              Text(
-                                'kam',
-                                style: Theme.of(context).textTheme.bodyMedium,
-                              ),
-                              Text(
-                                'jum',
-                                style: Theme.of(context).textTheme.bodyMedium,
-                              ),
-                              Text(
-                                'sab',
-                                style: Theme.of(context).textTheme.bodyMedium,
-                              ),
-                              Text(
-                                'min',
-                                style: Theme.of(context).textTheme.bodyMedium,
-                              ),
-                            ],
-                          )
-                        ],
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => const MoodHistoryPage());
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(14),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: TColors.grey50,
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 8,
+                              spreadRadius: 0,
+                              offset: const Offset(1, 2),
+                              color: Colors.black.withOpacity(0.12),
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Jurnal Mood',
+                                  style:
+                                      Theme.of(context).textTheme.titleMedium,
+                                ),
+                                const Icon(
+                                  MingCuteIcons.mgc_right_line,
+                                  color: TColors.primary800,
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  children: [
+                                    Image.asset(md5, width: 20, height: 20),
+                                    Container(
+                                      width: 2,
+                                      height: 20,
+                                      color: TColors.secondary500,
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Image.asset(md5, width: 20, height: 20),
+                                    Container(
+                                      width: 2,
+                                      height: 20,
+                                      color: TColors.secondary500,
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Image.asset(md4, width: 20, height: 20),
+                                    Container(
+                                      width: 2,
+                                      height: 20,
+                                      color: TColors.secondary500,
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Image.asset(md6, width: 20, height: 20),
+                                    Container(
+                                      width: 2,
+                                      height: 20,
+                                      color: TColors.secondary500,
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Image.asset(md2, width: 20, height: 20),
+                                    Container(
+                                      width: 2,
+                                      height: 20,
+                                      color: TColors.secondary500,
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Image.asset(md5, width: 20, height: 20),
+                                    Container(
+                                      width: 2,
+                                      height: 20,
+                                      color: TColors.secondary500,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const Divider(),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'sen',
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                                Text(
+                                  'sel',
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                                Text(
+                                  'rab',
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                                Text(
+                                  'kam',
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                                Text(
+                                  'jum',
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                                Text(
+                                  'sab',
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                                Text(
+                                  'min',
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                     )
                   ],

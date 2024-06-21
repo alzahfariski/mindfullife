@@ -57,16 +57,27 @@ class DaftarPage extends StatelessWidget {
             ),
             Stack(
               children: [
-                Container(
-                  width: 100,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: const DecorationImage(
-                        image: AssetImage(tDefaultpp), fit: BoxFit.cover),
-                    border: Border.all(
-                      color: TColors.primary800,
-                      width: 1,
+                GestureDetector(
+                  onTap: () {
+                    Get.snackbar(
+                      'Proses pengembangan!',
+                      'Langsung klik Daftar',
+                      backgroundColor: TColors.primary500,
+                      snackPosition: SnackPosition.BOTTOM,
+                      margin: const EdgeInsets.all(20),
+                    );
+                  },
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: const DecorationImage(
+                          image: AssetImage(tDefaultpp), fit: BoxFit.cover),
+                      border: Border.all(
+                        color: TColors.primary800,
+                        width: 1,
+                      ),
                     ),
                   ),
                 ),

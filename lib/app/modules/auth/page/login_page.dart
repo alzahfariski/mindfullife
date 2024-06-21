@@ -123,7 +123,15 @@ class LoginPage extends StatelessWidget {
                     height: 10,
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.snackbar(
+                        'Maaf!',
+                        'Sedang tahap pengembangan',
+                        backgroundColor: TColors.primary500,
+                        snackPosition: SnackPosition.BOTTOM,
+                        margin: const EdgeInsets.all(20),
+                      );
+                    },
                     child: Text(
                       'Lupa password ?',
                       style: Theme.of(context).textTheme.titleMedium,
@@ -143,7 +151,15 @@ class LoginPage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24),
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.snackbar(
+                  'Maaf!',
+                  'Lakukan Pendaftaran',
+                  backgroundColor: TColors.primary500,
+                  snackPosition: SnackPosition.BOTTOM,
+                  margin: const EdgeInsets.all(20),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: TColors.primary800,
               ),

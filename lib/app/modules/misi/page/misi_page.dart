@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:midfullife/app/modules/misi/page/misi_membaca_page.dart';
 import 'package:midfullife/app/modules/misi/widgets/misi_widget.dart';
 import 'package:midfullife/utils/common/header_container.dart';
 import 'package:midfullife/utils/constants/colors.dart';
@@ -68,10 +69,13 @@ class MisiPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const MisiWidget(
-                    title: 'Meraih Kebahagiaan Sejati dalam Hidup',
-                    subtitle: '+ 10 Poin',
-                    img: membaca,
+                  GestureDetector(
+                    onTap: () => Get.to(() => const MisiMembacaPage()),
+                    child: const MisiWidget(
+                      title: 'Meraih Kebahagiaan Sejati dalam Hidup',
+                      subtitle: '+ 10 Poin',
+                      img: membaca,
+                    ),
                   ),
                   const SizedBox(
                     height: 10,
@@ -85,10 +89,21 @@ class MisiPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const MisiWidget(
-                    title: 'Bagaimana Dia Mengubah Hidupnya 180 Derajat',
-                    subtitle: '+ 10 Poin',
-                    img: menonton,
+                  GestureDetector(
+                    onTap: () {
+                      Get.snackbar(
+                        'Maaf!',
+                        'Sedang Proses Pengembangan',
+                        snackPosition: SnackPosition.BOTTOM,
+                        backgroundColor: TColors.primary500,
+                        margin: const EdgeInsets.all(20),
+                      );
+                    },
+                    child: const MisiWidget(
+                      title: 'Bagaimana Dia Mengubah Hidupnya 180 Derajat',
+                      subtitle: '+ 10 Poin',
+                      img: menonton,
+                    ),
                   ),
                   const SizedBox(
                     height: 10,
@@ -102,10 +117,21 @@ class MisiPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const MisiWidget(
-                    title: 'Melaksanakan Hobi',
-                    subtitle: '+ 10 Poin',
-                    img: beraktifitas,
+                  GestureDetector(
+                    onTap: () {
+                      Get.snackbar(
+                        'Maaf!',
+                        'Sedang Proses Pengembangan',
+                        snackPosition: SnackPosition.BOTTOM,
+                        backgroundColor: TColors.primary500,
+                        margin: const EdgeInsets.all(20),
+                      );
+                    },
+                    child: const MisiWidget(
+                      title: 'Melaksanakan Hobi',
+                      subtitle: '+ 10 Poin',
+                      img: beraktifitas,
+                    ),
                   ),
                   const SizedBox(
                     height: 10,

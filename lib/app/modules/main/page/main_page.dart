@@ -248,9 +248,20 @@ class _MainPageState extends State<MainPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        const MainMenuWidget(
-                          icon: MingCuteIcons.mgc_schedule_fill,
-                          text: 'CBT',
+                        GestureDetector(
+                          onTap: () {
+                            Get.snackbar(
+                              'Maaf!',
+                              'Sedang Proses Pengembangan',
+                              snackPosition: SnackPosition.BOTTOM,
+                              backgroundColor: TColors.primary500,
+                              margin: const EdgeInsets.all(20),
+                            );
+                          },
+                          child: const MainMenuWidget(
+                            icon: MingCuteIcons.mgc_schedule_fill,
+                            text: 'CBT',
+                          ),
                         ),
                         GestureDetector(
                           onTap: () => Get.to(() => const RexercisePage()),
@@ -259,9 +270,20 @@ class _MainPageState extends State<MainPage> {
                             text: 'Rexercise',
                           ),
                         ),
-                        const MainMenuWidget(
-                          icon: MingCuteIcons.mgc_artboard_fill,
-                          text: 'Leaderboard',
+                        GestureDetector(
+                          onTap: () {
+                            Get.snackbar(
+                              'Maaf!',
+                              'Sedang Proses Pengembangan',
+                              snackPosition: SnackPosition.BOTTOM,
+                              backgroundColor: TColors.primary500,
+                              margin: const EdgeInsets.all(20),
+                            );
+                          },
+                          child: const MainMenuWidget(
+                            icon: MingCuteIcons.mgc_artboard_fill,
+                            text: 'Leaderboard',
+                          ),
                         ),
                       ],
                     ),
@@ -271,13 +293,35 @@ class _MainPageState extends State<MainPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        const MainMenuWidget(
-                          icon: MingCuteIcons.mgc_medal_fill,
-                          text: 'Badge',
+                        GestureDetector(
+                          onTap: () {
+                            Get.snackbar(
+                              'Maaf!',
+                              'Sedang Proses Pengembangan',
+                              snackPosition: SnackPosition.BOTTOM,
+                              backgroundColor: TColors.primary500,
+                              margin: const EdgeInsets.all(20),
+                            );
+                          },
+                          child: const MainMenuWidget(
+                            icon: MingCuteIcons.mgc_medal_fill,
+                            text: 'Badge',
+                          ),
                         ),
-                        const MainMenuWidget(
-                          icon: MingCuteIcons.mgc_paper_fill,
-                          text: 'Artikel',
+                        GestureDetector(
+                          onTap: () {
+                            Get.snackbar(
+                              'Maaf!',
+                              'Sedang Proses Pengembangan',
+                              snackPosition: SnackPosition.BOTTOM,
+                              backgroundColor: TColors.primary500,
+                              margin: const EdgeInsets.all(20),
+                            );
+                          },
+                          child: const MainMenuWidget(
+                            icon: MingCuteIcons.mgc_paper_fill,
+                            text: 'Artikel',
+                          ),
                         ),
                         GestureDetector(
                           onTap: () => Get.to(() => const MisiPage()),

@@ -84,20 +84,32 @@ class KomunitasDetailPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Container(
-                    width: 200,
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: TColors.primary800,
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Gabung',
-                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                              fontWeight: FontWeight.w600,
-                              color: TColors.grey50,
-                            ),
+                  GestureDetector(
+                    onTap: () {
+                      Get.snackbar(
+                        'Maaf!',
+                        'Sedang Proses Pengembangan',
+                        snackPosition: SnackPosition.BOTTOM,
+                        backgroundColor: TColors.primary500,
+                        margin: const EdgeInsets.all(20),
+                      );
+                    },
+                    child: Container(
+                      width: 200,
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: TColors.primary800,
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Gabung',
+                          style:
+                              Theme.of(context).textTheme.bodyLarge!.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                    color: TColors.grey50,
+                                  ),
+                        ),
                       ),
                     ),
                   ),

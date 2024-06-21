@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:midfullife/app/modules/depresi/page/depresi_tes.dart';
 import 'package:midfullife/utils/common/header_container.dart';
 import 'package:midfullife/utils/constants/colors.dart';
 import 'package:midfullife/utils/constants/image_string.dart';
@@ -144,7 +145,9 @@ class DepresiPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         width: double.infinity,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.to(() => const DepresiTes());
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: TColors.primary800,
           ),
